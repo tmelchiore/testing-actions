@@ -1,2 +1,2 @@
 # testing-actions
-Just testing some actions
+Just testing some actions. OK.
