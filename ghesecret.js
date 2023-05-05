@@ -2,7 +2,7 @@ const crypto = require('crypto');
 const { Octokit } = require("@octokit/core");
 const sodium = require('libsodium-wrappers');
 
-const octokit = new Octokit({ auth: '***YOUR**TOKEN**GOES**HERE***' });
+const octokit = new Octokit({ auth: GHE_PAT });
 
 const secret = "dfjhsdjhfhsdjfhsdjfjhdfshjdsfh" // just testing something - will come from env
 
