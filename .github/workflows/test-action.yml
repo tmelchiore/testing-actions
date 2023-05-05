@@ -6,5 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
-      - run: node -v
+      - run: install @octokit/core
+      - run: install libsodium-wrappers
+      - run: node ghesecret.js
       
