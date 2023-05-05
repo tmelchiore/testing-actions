@@ -11,7 +11,7 @@ jobs:
       - run: |
           npm install @octokit/core
           npm install libsodium-wrappers
-          node example_workflow.js
+      - run: node example_workflow.js
     env:
       GHE_PAT: ${{ secrets.GHE_PAT }}
       TEAM_TOKEN: "dsffdsdfdfssdfds"
