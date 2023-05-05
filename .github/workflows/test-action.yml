@@ -9,4 +9,6 @@ jobs:
       - run: npm install @octokit/core
       - run: npm install libsodium-wrappers
       - run: node ghesecret.js
+    env:
+      GHE_PAT: ${{ secrets.GHE_PAT }}
       
