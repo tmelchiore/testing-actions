@@ -2,9 +2,9 @@ const crypto = require('crypto');
 const { Octokit } = require("@octokit/core");
 const sodium = require('libsodium-wrappers');
 
-const octokit = new Octokit({ auth: GHE_PAT });
+const octokit = new Octokit({ auth: process.env.GHE_PAT });
 
-const secret = "ghfgghfJJJDDD" // just testing - will come from env
+const secret = process.env.TEAM_TOKEN
   
 encryptUpdateRepoSecret()
       .then(res => {
@@ -40,10 +40,10 @@ async function encryptUpdateRepoSecret() {
   
   console.log("--encrpyted secret=" + output)
 
-  const updateSecretResponse = await octokit.request('PUT /repos/TMelchiorE/testing-actions/actions/secrets/JUST_TESTING', {
+  const updateSecretResponse = await octokit.request('PUT /repos/TMelchiorE/testing-actions/actions/secrets/TEAM_TOKEN', {
     owner: 'TMelchiorE',
     repo: 'testing-actions',
-    secret_name: 'JUST_TESTING',
+    secret_name: 'TEAM_TOKEN',
     key_id: publicKeyId,
     encrypted_value: output,
   });
